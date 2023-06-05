@@ -5,11 +5,11 @@ let pokemonList = [
     {name: 'Venomoth', height: 1.5, type: ['bug', 'poison']}
 ]
 for (let i=0; i < pokemonList.length; i++){
-    if (pokemonList[i].height >= 1.6) {
-        document.write(pokemonList[i].name + pokemonList[i].height + ' Wow, that\'s big!');
+    if (pokemonList[i].height > 1.5) {
+        document.write(pokemonList[i].name + ' ' + pokemonList[i].height + ' Wow, that\'s big! ');
     }
     else {
-        document.write(pokemonList[i].name + ' ' + pokemonList[i].height)   
+        document.write(pokemonList[i].name + ' ' + pokemonList[i].height + ' ')   
     }
 }
 
