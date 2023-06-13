@@ -4,22 +4,22 @@ let pokemonRepository = (function () {
         {
             name: 'Bulbasaur', 
             height: 0.7, 
-            type: ['grass', 'poison']
+            type: ['grass', ' poison']
         }, 
         {
             name: 'Pikachu', 
             height: 0.4, 
-            type: 'electric'
+            type: ' electric'
         },
         {
             name: 'Charizard', 
             height: 1.7, 
-            type: ['fire', 'flying']
+            type: ['fire', ' flying']
         },
         {
             name: 'Venomoth', 
             height: 1.5, 
-            type: ['bug', 'poison']
+            type: ['bug', ' poison']
         }
     ];
 
