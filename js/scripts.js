@@ -40,17 +40,16 @@ let pokemonRepository = (function () {
 
 
 function listingPokemon (pokemon) {
-
-    document.write('<p>' + pokemon.name + ' ' + pokemon.height + ' ' + pokemon.type + '<p/>'); 
     
-    // if (pokemonList.height > 1.5) {
-    //     document.write('<p>' + pokemon.name + ' ' + pokemon.height + ' Wow, that\'s big!' + ' ' + pokemon.type + '<p/');
-    // }
-    // else {
-    //     document.write('<p>' + pokemon.name + ' ' + pokemon.height + '<p/> ')
-    // }
+    if (pokemon.height > 1.5) {
+        document.write('<p>' + pokemon.name + ' ' + pokemon.height + ' (Wow, that\'s big!)' + ' ' + pokemon.type + '</p>');
+    }
+    else {
+        document.write('<p>' + pokemon.name + ' ' + pokemon.height + ' ' + pokemon.type + '</p> ')
+    }
 
 }
+
 
 pokemonRepository.getAll().forEach(listingPokemon);
 
