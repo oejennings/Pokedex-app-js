@@ -42,7 +42,25 @@ let pokemonRepository = (function () {
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
             console.log(pokemon);
-        });
+        }); 
+    }
+
+    function showModal(title, text){
+        let modalContainer = document.querySelector('#modal-contianer');
+        modalContainer.innerHTML = '';
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        // let closeButtonElement = document.createElement('button');
+        // closeButtonElement.classList.add('modal-close');
+        // closeButtonElement.innerText = 'Close';
+        // closeButtonElement.addEventListener('click', hideModal);
+
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = pokemon.name;
+
+        let contentElement = document.createElement('p');
+        contentElement.innerText = 'height :' + pokemon.height
     }
 
     function loadList() {
