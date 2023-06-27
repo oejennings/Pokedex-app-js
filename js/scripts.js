@@ -2,6 +2,7 @@ let pokemonRepository = (function () {
     
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let modalContainer = document.querySelector('#modal-contianer');
 
     function add(pokemon) {
         if (
@@ -40,10 +41,8 @@ let pokemonRepository = (function () {
     }
 
     function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-            console.log(pokemon);
-        }); 
-    }
+        loadDetails(pokemon)
+        }; 
 
     function showModal(title, text){
         let modalContainer = document.querySelector('#modal-contianer');
@@ -51,17 +50,39 @@ let pokemonRepository = (function () {
         let modal = document.createElement('div');
         modal.classList.add('modal');
 
-        // let closeButtonElement = document.createElement('button');
-        // closeButtonElement.classList.add('modal-close');
-        // closeButtonElement.innerText = 'Close';
-        // closeButtonElement.addEventListener('click', hideModal);
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
 
         let titleElement = document.createElement('h1');
         titleElement.innerText = pokemon.name;
 
         let contentElement = document.createElement('p');
         contentElement.innerText = 'height :' + pokemon.height
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
+
+        modalContainer.classList.add('is-visible');
     }
+
+    function hideModal() {
+        modalContainer.classList.remove('is-visible');
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' &&
+        modalContainer.classList.contains('is-visible')) {
+            hideModal();
+        }
+    });
+
+    document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal(pokemon.name, pokemon.height);
+    });
 
     function loadList() {
         return fetch(apiUrl).then(function (response) {
@@ -97,7 +118,8 @@ let pokemonRepository = (function () {
         add: add,
         loadList: loadList,
         loadDetails: loadDetails,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showModal: showModal
     }; 
 }) ();
 
