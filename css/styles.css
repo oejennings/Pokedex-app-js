@@ -5,6 +5,10 @@ body{
     font-family: 'Work Sans', sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     text-align: center;
