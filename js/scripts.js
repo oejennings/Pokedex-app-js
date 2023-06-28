@@ -67,8 +67,9 @@ let pokemonRepository = (function () {
         modalContainer.appendChild(modal);
     
         modalContainer.classList.add('is-visible');
+        
     }
-
+      
     function hideModal() {
         modalContainer.classList.remove('is-visible');
     }
@@ -128,7 +129,8 @@ let pokemonRepository = (function () {
         loadDetails: loadDetails,
         addListItem: addListItem,
         showDetails: showDetails,
-        showModal: showModal
+        showModal: showModal,
+        hideModal: hideModal
     }; 
 }) ();
 
