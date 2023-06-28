@@ -58,7 +58,7 @@ let pokemonRepository = (function () {
         let imageElement = document.createElement('img');
         imageElement.setAttribute('src', img);
         imageElement.setAttribute('width', '304');
-        imageElement.setAttribute('height', '228')
+        imageElement.setAttribute('height', '228');
 
 
         let contentElement = document.createElement('p');
