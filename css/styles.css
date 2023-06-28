@@ -78,6 +78,7 @@ button:hover {
   .modal h1 {
     margin-top: 0;
     text-align: center;
+    text-transform: uppercase;
   }
   
   .modal p {
