@@ -28,6 +28,7 @@ ul {
     margin: 4px 2px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    width: 20%;
 }
 
 button:hover {
