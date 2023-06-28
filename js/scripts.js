@@ -54,15 +54,15 @@ let pokemonRepository = (function () {
         let titleElement = document.createElement('h1');
         titleElement.innerText = title;
 
-        let imageElement = document.createElement('img');
-        imageElement.src = ;
+        // let imageElement = document.createElement('img');
+        // imageElement.src = img;
 
         let contentElement = document.createElement('p');
         contentElement.innerText = text;
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
-        modal.appendChild(imageElement);
+        // modal.appendChild(imageElement);
         modal.appendChild(contentElement);
         modalContainer.appendChild(modal);
     
