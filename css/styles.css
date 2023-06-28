@@ -5,6 +5,11 @@ body{
     font-family: 'Work Sans', sans-serif;
 }
 
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
 .button-class {
     background-color: rgb(18, 18, 223);
     font-family: 'Work Sans', sans-serif;
