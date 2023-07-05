@@ -29,9 +29,12 @@ let pokemonRepository = (function () {
         let listItem = document.createElement('li');
         let button = document.createElement('button');
 
+        button.setAttribute("data-toggle", "modal");
+        button.setAttribute("data-target", "#modalContainer");
 
         button.innerText = pokemon.name;
         button.classList.add('button-class');
+
         button.addEventListener('click', function() {
             showDetails(pokemon);
         })
@@ -40,37 +43,25 @@ let pokemonRepository = (function () {
         pokemonLists.appendChild(listItem); 
     }
   
-    function showModal(title, img, text) {
-
-        modalContainer.innerHTML = '';
-
-        let modal = document.createElement('div');
-        modal.classList.add('modal');
-
-        let closeButtonElement = document.createElement('button');
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText = 'Close';
-        closeButtonElement.addEventListener('click', hideModal);
-
-        let titleElement = document.createElement('h1');
-        titleElement.innerText = title;
-
-        let imageElement = document.createElement('img');
-        imageElement.setAttribute('src', img);
-        imageElement.setAttribute('width', '304');
-        imageElement.setAttribute('height', '228');
-
-
-        let contentElement = document.createElement('p');
-        contentElement.innerText = text;
-
-        modal.appendChild(closeButtonElement);
-        modal.appendChild(titleElement);
-        modal.appendChild(imageElement);
-        modal.appendChild(contentElement);
-        modalContainer.appendChild(modal);
     
-        modalContainer.classList.add('is-visible');
+
+    function showModal(item) {
+
+        let modalBody = $(".modal-body");
+        let modalTitle = $(".modal-title");
+
+        modalTitle.empty();
+        modalBody.empty();
+
+        let nameElement = $("<h1>" + item.name + "</h1>");
+        let imageElement = $('<img class="modal-img" style="width:50%>');
+        imageElement.attr("src", item.imageUrl);
+
+        let heightElement = $("<p>" + + "height: " + item.height + "m" + "</p>");
+
+        modalTitle.append(nameElement);
+        modalBody.append(imageElement);
+        modalBody.append(heightElement);
         
     }
       
@@ -84,16 +75,10 @@ let pokemonRepository = (function () {
         }
     });
   
-    modalContainer.addEventListener('click', (e) => {
-        let target = e.target;
-        if (target === modalContainer) {
-            hideModal();
-        }
-     });
 
      function showDetails(item) {
         loadDetails(item).then(function () {
-            showModal(item.name, item.imageUrl, 'Height: ' + item.height + 'm');
+            showModal(item);
         })
     }; 
 
