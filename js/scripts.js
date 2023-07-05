@@ -42,8 +42,6 @@ let pokemonRepository = (function () {
         listItem.appendChild(button);
         pokemonLists.appendChild(listItem); 
     }
-  
-    
 
     function showModal(item) {
 
