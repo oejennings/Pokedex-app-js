@@ -111,7 +111,7 @@ let pokemonRepository = (function () {
         });
     }
 
-    let searchBar = document.querySelector(".search");
+    let searchBar = document.querySelector("#search");
     let listArea = document.querySelector(".pokemon-list");
 
     function pokemonFilter(searchInput) {
@@ -129,7 +129,7 @@ let pokemonRepository = (function () {
         pokemonRepository.addListItem(pokemon)
     }
 
-    searchBar.addEventListener('.search', function () {
+    searchBar.addEventListener('input', function () {
         let searchInput = searchBar.value
         let filteredList = pokemonRepository.pokemonFilter(searchInput)
         removeList()
