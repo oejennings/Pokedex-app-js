@@ -110,6 +110,35 @@ let pokemonRepository = (function () {
             console.error (e);
         });
     }
+
+    // let searchBar = document.querySelector(".search");
+    // let listArea = document.querySelector(".pokemon-list");
+
+    // function pokemonFilter(searchInput) {
+    //     return pokemonList.filter((pokemon) => {
+    //         let filteredPokemon = pokemon.name
+    //         return filteredPokemon.includes(searchInput.toLowerCase())
+    //     });
+    // }
+
+    // function removeList() {
+    //     listArea.innerHTML = ''
+    // }
+
+    // function addPokemon(pokemon) {
+    //     pokemonRepository.addListItem(pokemon)
+    // }
+
+    // searchBar.addEventListener('.search', function () {
+    //     let searchInput = searchBar.value
+    //     let filteredList = pokemonRepository.pokemonFilter(searchInput)
+    //     removeList()
+    //     if (filteredList.length === 0) {
+    //         listArea.innerHTML = '<p>No Pokemon with that Name</p>'
+    //     } else {
+    //         filteredList.forEach(addPokemon)
+    //     }
+    // })
     
     return{
         getAll: getAll,
@@ -120,6 +149,7 @@ let pokemonRepository = (function () {
         showDetails: showDetails,
         showModal: showModal,
         hideModal: hideModal
+        // pokemonFilter: pokemonFilter
     }; 
 }) ();
 
